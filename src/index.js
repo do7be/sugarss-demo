@@ -14,4 +14,5 @@ function runPostcss () {
   })
 }
 
-document.getElementById('src').addEventListener('change', runPostcss)
+document.getElementById('src').addEventListener('keypress', runPostcss)
+runPostcss()
