@@ -122,12 +122,7 @@
 	  return DemoArea;
 	}(React.Component);
 
-	var initialText = function () {/*
-	                               // Let's edit SugarSS
-	                               .foo .bar
-	                               font-size: normal
-	                               display: flex
-	                               */}.toString().match(/[^]*\/\*([^]*)\*\/\}$/)[1];
+	var initialText = '\n// Let\'s edit SugarSS\n.foo .bar\n  font-size: normal\n  display: flex\n';
 
 	ReactDOM.render(React.createElement(DemoArea, { text: initialText }), document.getElementById('demo-area'));
 

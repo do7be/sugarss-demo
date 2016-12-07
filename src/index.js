@@ -44,12 +44,12 @@ class DemoArea extends React.Component {
   }
 }
 
-var initialText = (function () {/*
+var initialText = `
 // Let's edit SugarSS
 .foo .bar
   font-size: normal
   display: flex
-*/}).toString().match(/[^]*\/\*([^]*)\*\/\}$/)[1];
+`
 
 ReactDOM.render(
   <DemoArea text={initialText} />,
