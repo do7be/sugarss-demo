@@ -69,34 +69,46 @@
 
 	    _this.state = {
 	      text: _this.props.text,
-	      output: ''
+	      output: '',
+	      error: false
 	    };
 	    _this.handleChange = _this.handleChange.bind(_this);
+	    _this.transformToCSS = _this.transformToCSS.bind(_this);
 	    return _this;
 	  }
 
 	  _createClass(DemoArea, [{
 	    key: 'componentDidMount',
-	    value: function componentDidMount() {}
+	    value: function componentDidMount() {
+	      this.transformToCSS(this.props.text);
+	    }
 	  }, {
 	    key: 'componentWillMount',
 	    value: function componentWillMount() {}
 	  }, {
 	    key: 'handleChange',
 	    value: function handleChange(event) {
+	      var css = event.target.value;
+	      this.setState({ error: false });
+	      this.transformToCSS(css);
+	    }
+	  }, {
+	    key: 'transformToCSS',
+	    value: function transformToCSS(css) {
 	      var _this2 = this;
 
-	      var css = event.target.value;
 	      this.setState({ text: css });
 	      postcss().process(css, { parser: sugarss }).then(function (result) {
 	        return new Promise(function (resolve, reject) {
 	          result.warnings().forEach(function (warn) {
-	            console.warn(warn.toString());
+	            _this2.setState({ error: true });
 	          });
 	          resolve(result.css);
 	        });
 	      }).then(function (css) {
 	        _this2.setState({ output: css });
+	      }).catch(function (e) {
+	        _this2.setState({ error: true });
 	      });
 	    }
 	  }, {
@@ -106,6 +118,11 @@
 	        'div',
 	        null,
 	        React.createElement('textarea', { onChange: this.handleChange, value: this.state.text }),
+	        this.state.error && React.createElement(
+	          'div',
+	          null,
+	          '\u30A8\u30E9\u30FC\u3063\u3059'
+	        ),
 	        React.createElement(
 	          'pre',
 	          null,
@@ -122,7 +139,7 @@
 	  return DemoArea;
 	}(React.Component);
 
-	var initialText = '\n// Let\'s edit SugarSS\n.foo .bar\n  font-size: normal\n  display: flex\n';
+	var initialText = '// Let\'s edit SugarSS\n.foo .bar\n  font-size: normal\n  display: flex\n';
 
 	ReactDOM.render(React.createElement(DemoArea, { text: initialText }), document.getElementById('demo-area'));
 
