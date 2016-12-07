@@ -1,5 +1,5 @@
 {
-  "name": "browser_postcss",
+  "name": "sugarss_demo",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -24,6 +24,6 @@
     "build": "webpack",
     "watch": "webpack -w"
   },
-  "author": "",
+  "author": "do7be",
   "license": "MIT"
 }
