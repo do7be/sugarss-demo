@@ -51,7 +51,7 @@
 	var postcss = __webpack_require__(250);
 
 	function runPostcss() {
-	  var css = document.getElementById('src').textContent;
+	  var css = document.getElementById('src').value;
 
 	  postcss().process(css, { parser: sugarss }).then(function (result) {
 	    result.warnings().forEach(function (warn) {
@@ -61,7 +61,7 @@
 	  });
 	}
 
-	document.getElementById('src').addEventListener('keypress', runPostcss);
+	document.getElementById('src').addEventListener('keyup', runPostcss);
 	runPostcss();
 
 /***/ },

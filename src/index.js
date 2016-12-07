@@ -2,7 +2,7 @@ const sugarss      = require('sugarss')
 const postcss      = require('postcss')
 
 function runPostcss () {
-  const css = document.getElementById('src').textContent
+  const css = document.getElementById('src').value
 
   postcss().process(css, { parser: sugarss }).then(function (result) {
     result.warnings().forEach(function (warn) {
@@ -12,5 +12,5 @@ function runPostcss () {
   })
 }
 
-document.getElementById('src').addEventListener('keypress', runPostcss)
+document.getElementById('src').addEventListener('keyup', runPostcss)
 runPostcss()
