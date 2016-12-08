@@ -24,7 +24,6 @@ module.exports = {
       {
         test: /\.sss/,
         loaders: ['style', 'css?modules', 'postcss?parser=sugarss'],
-        //loader: "style-loader!css-loader!postcss-loader?parser=sugarss"
       },
     ]
   },
