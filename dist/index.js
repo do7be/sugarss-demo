@@ -132,7 +132,7 @@
 	        var start = event.target.selectionStart;
 	        var end = event.target.selectionEnd;
 	        var css = this.state.text.substring(0, start) + '  ' + this.state.text.substring(end);
-	        this.setState({ text: css });
+	        this.transformToCSS(css);
 	        this.nextSelection = start + 2;
 	      }
 	    }

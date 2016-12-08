@@ -42,7 +42,7 @@ class DemoArea extends React.Component {
       const start = event.target.selectionStart
       const end = event.target.selectionEnd
       const css = this.state.text.substring(0, start) + '  ' + this.state.text.substring(end)
-      this.setState({text: css})
+      this.transformToCSS(css)
       this.nextSelection = start + 2
     }
   }
