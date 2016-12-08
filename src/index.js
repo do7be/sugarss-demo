@@ -1,7 +1,8 @@
-const sugarss = require('sugarss')
-const postcss = require('postcss')
-const React = require('react');
-const ReactDOM = require('react-dom');
+import sugarss from 'sugarss'
+import postcss from 'postcss'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import * as style from './style.sss'
 
 class DemoArea extends React.Component {
   constructor(props) {
@@ -45,9 +46,10 @@ class DemoArea extends React.Component {
   }
 
   render() {
+    console.log(style)
     return (
       <div>
-        <textarea onChange={this.handleChange} value={this.state.text} />
+        <textarea onChange={this.handleChange} className={style.src} value={this.state.text} />
         {this.state.error && <div>エラーっす</div>}
         <pre><code>{this.state.output}</code></pre>
       </div>
