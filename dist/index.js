@@ -155,12 +155,7 @@
 	          _react2.default.createElement(
 	            'div',
 	            { className: style.srcContainer },
-	            _react2.default.createElement('textarea', { onChange: this.handleChange, className: style.src, value: this.state.text }),
-	            this.state.error && _react2.default.createElement(
-	              'div',
-	              null,
-	              '\u30A8\u30E9\u30FC\u3063\u3059'
-	            )
+	            _react2.default.createElement('textarea', { onChange: this.handleChange, className: style.src, value: this.state.text })
 	          ),
 	          _react2.default.createElement(
 	            'div',
@@ -170,6 +165,15 @@
 	              { className: (0, _classnames2.default)('css', style.dist) },
 	              this.state.output
 	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'section',
+	          { className: (0, _classnames2.default)(style.alert, this.state.error && style.on) },
+	          _react2.default.createElement(
+	            'div',
+	            { className: style.alertMessage },
+	            'parse error'
 	          )
 	        ),
 	        _react2.default.createElement('footer', null)
@@ -34577,7 +34581,7 @@
 
 
 	// module
-	exports.push([module.id, "._3cIyerOczNNwFzx7XRQtts {\n  height: 60px;\n  line-height: 60px;\n  text-align: center;\n  font-size: 32px;\n  letter-spacing: 4px;\n  font-weight: bold;\n  color: #2c2c2c\n}\n\n._2Dg-z79j-wK0n6gIF-_eLc {\n  display: flex;\n  justify-content: center\n}\n\n.DI-gV0A5MdaO75BdV9xh8 {\n  border-right: 1px solid #eee\n}\n\n.DI-gV0A5MdaO75BdV9xh8,\n._3dSDXxAJ_hW8K4cKFu3-7y {\n  height: calc(100vh - 60px - 40px);\n  width: 460px;\n  padding: 20px\n}\n\n._113vOm12WDk0r0lRA9pHFT {\n  resize: none;\n  font-family: monospace, monospace\n}\n\n._113vOm12WDk0r0lRA9pHFT,\n._1ifZUWj6fWINNAPkcZiOTy {\n  overflow: auto;\n  box-sizing: border-box;\n  height: 100%;\n  width: 100%;\n  padding: 4px;\n  margin: 0;\n  border: none;\n  outline: none;\n  font-size: 14px;\n  line-height: 1.3\n}\n", ""]);
+	exports.push([module.id, "._3cIyerOczNNwFzx7XRQtts {\n  height: 60px;\n  line-height: 60px;\n  text-align: center;\n  font-size: 32px;\n  letter-spacing: 4px;\n  font-weight: bold;\n  color: #2c2c2c\n}\n\n._2Dg-z79j-wK0n6gIF-_eLc {\n  display: flex;\n  justify-content: center\n}\n\n.DI-gV0A5MdaO75BdV9xh8 {\n  border-right: 1px solid #eee\n}\n\n.DI-gV0A5MdaO75BdV9xh8,\n._3dSDXxAJ_hW8K4cKFu3-7y {\n  height: calc(100vh - 60px - 40px);\n  width: 460px;\n  padding: 20px\n}\n\n._113vOm12WDk0r0lRA9pHFT {\n  resize: none;\n  font-family: monospace, monospace\n}\n\n._113vOm12WDk0r0lRA9pHFT,\n._1ifZUWj6fWINNAPkcZiOTy {\n  overflow: auto;\n  box-sizing: border-box;\n  height: 100%;\n  width: 100%;\n  padding: 4px;\n  margin: 0;\n  border: none;\n  outline: none;\n  font-size: 14px;\n  line-height: 1.3\n}\n\n._3rG4z_tTjJEJnEjKEUrA04 {\n  display: flex;\n  justify-content: center;\n  position: absolute;\n  top: 60px;\n  width: 100%;\n  visibility: hidden;\n  opacity: 0;\n  transition: .3s visibility linear, .3s opacity linear\n}\n\n._2_vDlw35tWcLqtiqVu1R35 {\n  visibility: visible;\n  opacity: 1\n}\n\n._89unRBpRWnQTpt3PoPicS {\n  padding: 10px 40px;\n  font-size: 16px;\n  background-color: #fe3453;\n  color: #eee;\n  border-radius: 4px\n}\n", ""]);
 
 	// exports
 	exports.locals = {
@@ -34586,7 +34590,10 @@
 		"srcContainer": "DI-gV0A5MdaO75BdV9xh8",
 		"distContainer": "_3dSDXxAJ_hW8K4cKFu3-7y",
 		"src": "_113vOm12WDk0r0lRA9pHFT",
-		"dist": "_1ifZUWj6fWINNAPkcZiOTy"
+		"dist": "_1ifZUWj6fWINNAPkcZiOTy",
+		"alert": "_3rG4z_tTjJEJnEjKEUrA04",
+		"on": "_2_vDlw35tWcLqtiqVu1R35",
+		"alertMessage": "_89unRBpRWnQTpt3PoPicS"
 	};
 
 /***/ },

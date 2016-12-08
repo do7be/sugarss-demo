@@ -54,13 +54,15 @@ class DemoArea extends React.Component {
         <section className={style.contents}>
           <div className={style.srcContainer}>
             <textarea onChange={this.handleChange} className={style.src} value={this.state.text} />
-            {this.state.error && <div>エラーっす</div>}
           </div>
           <div className={style.distContainer}>
             <Highlight className={classNames('css', style.dist)}>
               {this.state.output}
             </Highlight>
           </div>
+        </section>
+        <section className={classNames(style.alert, this.state.error && style.on)}>
+          <div className={style.alertMessage}>parse error</div>
         </section>
         <footer></footer>
       </div>

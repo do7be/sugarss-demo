@@ -36,3 +36,24 @@
   outline: none
   font-size: 14px
   line-height: 1.3
+
+.alert
+  display: flex
+  justify-content: center
+  position: absolute
+  top: 60px
+  width: 100%
+  visibility: hidden
+  opacity: 0
+  transition: .3s visibility linear, .3s opacity linear
+
+.on
+  visibility: visible
+  opacity: 1
+
+.alertMessage
+  padding: 10px 40px
+  font-size: 16px
+  background-color: #fe3453
+  color: #eee
+  border-radius: 4px
