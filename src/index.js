@@ -1,7 +1,9 @@
 import sugarss from 'sugarss'
 import postcss from 'postcss'
+import classNames from 'classnames'
 import React from 'react'
 import ReactDOM from 'react-dom'
+import Highlight from 'react-highlight'
 import * as style from './style.sss'
 
 class DemoArea extends React.Component {
@@ -46,7 +48,6 @@ class DemoArea extends React.Component {
   }
 
   render() {
-    console.log(style)
     return (
       <div>
         <header className={style.header}>SugarSS Demo</header>
@@ -56,7 +57,9 @@ class DemoArea extends React.Component {
             {this.state.error && <div>エラーっす</div>}
           </div>
           <div className={style.distContainer}>
-            <pre className={style.dist}><code>{this.state.output}</code></pre>
+            <Highlight className={classNames('css', style.dist)}>
+              {this.state.output}
+            </Highlight>
           </div>
         </section>
         <footer></footer>
@@ -67,8 +70,9 @@ class DemoArea extends React.Component {
 
 var initialText = `// Let's edit SugarSS
 .foo .bar
-  font-size: normal
   display: flex
+  font-size: normal
+  background-image: url("./do7be.jpg")
 `
 
 ReactDOM.render(
