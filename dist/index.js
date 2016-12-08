@@ -137,21 +137,39 @@
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        _react2.default.createElement('textarea', { onChange: this.handleChange, className: style.src, value: this.state.text }),
-	        this.state.error && _react2.default.createElement(
-	          'div',
-	          null,
-	          '\u30A8\u30E9\u30FC\u3063\u3059'
+	        _react2.default.createElement(
+	          'header',
+	          { className: style.header },
+	          'SugarSS Demo'
 	        ),
 	        _react2.default.createElement(
-	          'pre',
-	          null,
+	          'section',
+	          { className: style.contents },
 	          _react2.default.createElement(
-	            'code',
-	            null,
-	            this.state.output
+	            'div',
+	            { className: style.srcContainer },
+	            _react2.default.createElement('textarea', { onChange: this.handleChange, className: style.src, value: this.state.text }),
+	            this.state.error && _react2.default.createElement(
+	              'div',
+	              null,
+	              '\u30A8\u30E9\u30FC\u3063\u3059'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: style.distContainer },
+	            _react2.default.createElement(
+	              'pre',
+	              { className: style.dist },
+	              _react2.default.createElement(
+	                'code',
+	                null,
+	                this.state.output
+	              )
+	            )
 	          )
-	        )
+	        ),
+	        _react2.default.createElement('footer', null)
 	      );
 	    }
 	  }]);
@@ -34556,11 +34574,16 @@
 
 
 	// module
-	exports.push([module.id, "._113vOm12WDk0r0lRA9pHFT {\n  height: 300px;\n  width: 500px;\n  font-size: 14px\n}\n", ""]);
+	exports.push([module.id, "._3cIyerOczNNwFzx7XRQtts {\n  height: 60px;\n  line-height: 60px;\n  text-align: center;\n  font-size: 24px;\n  font-weight: bold\n}\n\n._2Dg-z79j-wK0n6gIF-_eLc {\n  display: flex;\n  justify-content: center\n}\n\n.DI-gV0A5MdaO75BdV9xh8 {\n  border-right: 1px solid #eee\n}\n\n.DI-gV0A5MdaO75BdV9xh8,\n._3dSDXxAJ_hW8K4cKFu3-7y {\n  height: calc(100vh - 60px - 40px);\n  width: 460px;\n  padding: 20px\n}\n\n._113vOm12WDk0r0lRA9pHFT {\n  resize: none\n}\n\n._113vOm12WDk0r0lRA9pHFT,\n._1ifZUWj6fWINNAPkcZiOTy {\n  overflow: auto;\n  box-sizing: border-box;\n  height: 100%;\n  width: 100%;\n  padding: 4px;\n  margin: 0;\n  border: none;\n  outline: none;\n  font-size: 14px;\n  line-height: 1.2\n}\n", ""]);
 
 	// exports
 	exports.locals = {
-		"src": "_113vOm12WDk0r0lRA9pHFT"
+		"header": "_3cIyerOczNNwFzx7XRQtts",
+		"contents": "_2Dg-z79j-wK0n6gIF-_eLc",
+		"srcContainer": "DI-gV0A5MdaO75BdV9xh8",
+		"distContainer": "_3dSDXxAJ_hW8K4cKFu3-7y",
+		"src": "_113vOm12WDk0r0lRA9pHFT",
+		"dist": "_1ifZUWj6fWINNAPkcZiOTy"
 	};
 
 /***/ },

@@ -1,4 +1,35 @@
+.header
+  height: 60px
+  line-height: 60px
+  text-align: center
+  font-size: 24px
+  font-weight: bold
+
+.contents
+  display: flex
+  justify-content: center
+
+.srcContainer
+  border-right: 1px solid #eee
+
+.srcContainer,
+.distContainer
+  height: calc(100vh - 60px - 40px)
+  width: 460px
+  padding: 20px
+
 .src
-  height: 300px
-  width: 500px
+  resize: none
+
+.src,
+.dist
+  overflow: auto
+  box-sizing: border-box
+  height: 100%
+  width: 100%
+  padding: 4px
+  margin: 0
+  border: none
+  outline: none
   font-size: 14px
+  line-height: 1.2

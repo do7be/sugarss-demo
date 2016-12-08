@@ -49,9 +49,17 @@ class DemoArea extends React.Component {
     console.log(style)
     return (
       <div>
-        <textarea onChange={this.handleChange} className={style.src} value={this.state.text} />
-        {this.state.error && <div>エラーっす</div>}
-        <pre><code>{this.state.output}</code></pre>
+        <header className={style.header}>SugarSS Demo</header>
+        <section className={style.contents}>
+          <div className={style.srcContainer}>
+            <textarea onChange={this.handleChange} className={style.src} value={this.state.text} />
+            {this.state.error && <div>エラーっす</div>}
+          </div>
+          <div className={style.distContainer}>
+            <pre className={style.dist}><code>{this.state.output}</code></pre>
+          </div>
+        </section>
+        <footer></footer>
       </div>
     )
   }
