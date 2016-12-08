@@ -34574,7 +34574,7 @@
 
 
 	// module
-	exports.push([module.id, "._3cIyerOczNNwFzx7XRQtts {\n  height: 60px;\n  line-height: 60px;\n  text-align: center;\n  font-size: 32px;\n  letter-spacing: 4px;\n  font-weight: bold\n}\n\n._2Dg-z79j-wK0n6gIF-_eLc {\n  display: flex;\n  justify-content: center\n}\n\n.DI-gV0A5MdaO75BdV9xh8 {\n  border-right: 1px solid #eee\n}\n\n.DI-gV0A5MdaO75BdV9xh8,\n._3dSDXxAJ_hW8K4cKFu3-7y {\n  height: calc(100vh - 60px - 40px);\n  width: 460px;\n  padding: 20px\n}\n\n._113vOm12WDk0r0lRA9pHFT {\n  resize: none\n}\n\n._113vOm12WDk0r0lRA9pHFT,\n._1ifZUWj6fWINNAPkcZiOTy {\n  overflow: auto;\n  box-sizing: border-box;\n  height: 100%;\n  width: 100%;\n  padding: 4px;\n  margin: 0;\n  border: none;\n  outline: none;\n  font-size: 14px;\n  line-height: 1.2\n}\n", ""]);
+	exports.push([module.id, "._3cIyerOczNNwFzx7XRQtts {\n  height: 60px;\n  line-height: 60px;\n  text-align: center;\n  font-size: 32px;\n  letter-spacing: 4px;\n  font-weight: bold;\n  color: #2c2c2c\n}\n\n._2Dg-z79j-wK0n6gIF-_eLc {\n  display: flex;\n  justify-content: center\n}\n\n.DI-gV0A5MdaO75BdV9xh8 {\n  border-right: 1px solid #eee\n}\n\n.DI-gV0A5MdaO75BdV9xh8,\n._3dSDXxAJ_hW8K4cKFu3-7y {\n  height: calc(100vh - 60px - 40px);\n  width: 460px;\n  padding: 20px\n}\n\n._113vOm12WDk0r0lRA9pHFT {\n  resize: none\n}\n\n._113vOm12WDk0r0lRA9pHFT,\n._1ifZUWj6fWINNAPkcZiOTy {\n  overflow: auto;\n  box-sizing: border-box;\n  height: 100%;\n  width: 100%;\n  padding: 4px;\n  margin: 0;\n  border: none;\n  outline: none;\n  font-size: 14px;\n  line-height: 1.2\n}\n", ""]);
 
 	// exports
 	exports.locals = {
