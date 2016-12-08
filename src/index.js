@@ -15,7 +15,9 @@ class DemoArea extends React.Component {
       error: false
     }
     this.handleChange = this.handleChange.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
     this.transformToCSS = this.transformToCSS.bind(this);
+    this.nextSelection = null;
   }
 
   componentDidMount() {
@@ -23,6 +25,26 @@ class DemoArea extends React.Component {
   }
 
   componentWillMount() {
+  }
+
+  componentDidUpdate() {
+    if (this.nextSelection) {
+      this.input.selectionStart = this.input.selectionEnd = this.nextSelection
+      this.nextSelection = null
+    }
+  }
+
+  handleKeyDown(event) {
+    const keyCode = event.keyCode || event.which;
+
+    if (keyCode == 9) {
+      event.preventDefault()
+      const start = event.target.selectionStart
+      const end = event.target.selectionEnd
+      const css = this.state.text.substring(0, start) + '  ' + this.state.text.substring(end)
+      this.setState({text: css})
+      this.nextSelection = start + 2
+    }
   }
 
   handleChange(event) {
@@ -53,7 +75,7 @@ class DemoArea extends React.Component {
         <header className={style.header}>SugarSS Demo</header>
         <section className={style.contents}>
           <div className={style.srcContainer}>
-            <textarea onChange={this.handleChange} className={style.src} value={this.state.text} />
+            <textarea onKeyDown={this.handleKeyDown} onChange={this.handleChange} className={style.src} value={this.state.text} ref={ref => {this.input = ref}} />
           </div>
           <div className={style.distContainer}>
             <Highlight className={classNames('css', style.dist)}>

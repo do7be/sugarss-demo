@@ -100,7 +100,9 @@
 	      error: false
 	    };
 	    _this.handleChange = _this.handleChange.bind(_this);
+	    _this.handleKeyDown = _this.handleKeyDown.bind(_this);
 	    _this.transformToCSS = _this.transformToCSS.bind(_this);
+	    _this.nextSelection = null;
 	    return _this;
 	  }
 
@@ -112,6 +114,28 @@
 	  }, {
 	    key: 'componentWillMount',
 	    value: function componentWillMount() {}
+	  }, {
+	    key: 'componentDidUpdate',
+	    value: function componentDidUpdate() {
+	      if (this.nextSelection) {
+	        this.input.selectionStart = this.input.selectionEnd = this.nextSelection;
+	        this.nextSelection = null;
+	      }
+	    }
+	  }, {
+	    key: 'handleKeyDown',
+	    value: function handleKeyDown(event) {
+	      var keyCode = event.keyCode || event.which;
+
+	      if (keyCode == 9) {
+	        event.preventDefault();
+	        var start = event.target.selectionStart;
+	        var end = event.target.selectionEnd;
+	        var css = this.state.text.substring(0, start) + '  ' + this.state.text.substring(end);
+	        this.setState({ text: css });
+	        this.nextSelection = start + 2;
+	      }
+	    }
 	  }, {
 	    key: 'handleChange',
 	    value: function handleChange(event) {
@@ -141,6 +165,8 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
+	      var _this3 = this;
+
 	      return _react2.default.createElement(
 	        'div',
 	        null,
@@ -155,7 +181,9 @@
 	          _react2.default.createElement(
 	            'div',
 	            { className: style.srcContainer },
-	            _react2.default.createElement('textarea', { onChange: this.handleChange, className: style.src, value: this.state.text })
+	            _react2.default.createElement('textarea', { onKeyDown: this.handleKeyDown, onChange: this.handleChange, className: style.src, value: this.state.text, ref: function ref(_ref) {
+	                _this3.input = _ref;
+	              } })
 	          ),
 	          _react2.default.createElement(
 	            'div',
