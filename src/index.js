@@ -14,10 +14,10 @@ class DemoArea extends React.Component {
       output: '',
       error: false
     }
-    this.handleChange = this.handleChange.bind(this);
-    this.handleKeyDown = this.handleKeyDown.bind(this);
-    this.transformToCSS = this.transformToCSS.bind(this);
-    this.nextSelection = null;
+    this.handleChange = this.handleChange.bind(this)
+    this.handleKeyDown = this.handleKeyDown.bind(this)
+    this.transformToCSS = this.transformToCSS.bind(this)
+    this.nextSelection = null
   }
 
   componentDidMount() {
