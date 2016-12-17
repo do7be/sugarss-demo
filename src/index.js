@@ -92,7 +92,7 @@ class DemoArea extends React.Component {
   }
 }
 
-var initialText = `// Let's edit SugarSS
+const initialText = `// Let's edit SugarSS
 .foo .bar
   display: flex
   font-size: normal
