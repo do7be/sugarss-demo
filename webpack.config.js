@@ -1,3 +1,5 @@
+var autoprefixer = require('autoprefixer')
+
 module.exports = {
   context: __dirname + '/src',
   entry: {
@@ -27,6 +29,7 @@ module.exports = {
       },
     ]
   },
+  postcss: [ autoprefixer() ],
   node: {
     fs: "empty"
   }
