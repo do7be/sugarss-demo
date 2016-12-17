@@ -1,4 +1,5 @@
 const autoprefixer = require('autoprefixer')
+const cssnano = require('cssnano')
 
 module.exports = {
   context: __dirname + '/src',
@@ -29,7 +30,7 @@ module.exports = {
       },
     ]
   },
-  postcss: [ autoprefixer() ],
+  postcss: [ autoprefixer(), cssnano() ],
   node: {
     fs: "empty"
   }
