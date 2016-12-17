@@ -1,4 +1,4 @@
-var autoprefixer = require('autoprefixer')
+const autoprefixer = require('autoprefixer')
 
 module.exports = {
   context: __dirname + '/src',
